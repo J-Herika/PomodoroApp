@@ -1,33 +1,18 @@
 import { useEffect, useState } from "react";
+import Clock from "./body/Clock";
 
 enum State {
   Pomodoro,
   Clock,
 }
+type StateTP = {
+  currentState: State;
+};
 
-export default function Pomo() {
-  const [currentState, setCurrentState] = useState<State>(State.Clock);
-  const [clock, setClock] = useState<Date>(new Date());
-
-  function currentStateHandler() {
-    currentState == State.Clock
-      ? setCurrentState(State.Pomodoro)
-      : setCurrentState(State.Clock);
-  }
-
-  function clockHandler() {
-    setClock(new Date());
-  }
-
-  useEffect(() => {
-    if (currentState == State.Clock) setInterval(clockHandler, 1000);
-  });
-  
+export default function Pomo({ currentState }: StateTP) {
   return (
-    <p>
-      {currentState == State.Clock
-        ? `${clock.getHours()} : ${String(clock.getMinutes()).padStart(2, "0")} : ${String(clock.getSeconds()).padStart(2, "0")}`
-        : "Pomodoro"}
+    <p className="font-spaceGrotesk text-6xl font-bold text-red-500 sm:text-8xl sm:text-green-500 md:text-9xl md:text-purple-500">
+      {currentState == State.Clock ? <Clock /> : "Pomodoro"}
     </p>
   );
 }
