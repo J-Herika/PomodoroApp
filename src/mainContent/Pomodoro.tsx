@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import { VscDebugRestart } from "react-icons/vsc";
-import bellSound from "../../public/bell.mp3"
+import bellSound from "../../public/bell.mp3";
 
-let userChoice: number = 0.5;
-const bell = new Audio(bellSound)
+let userChoice: number = 60;
+const bell = new Audio(bellSound);
 
 export default function Pomodoro() {
   const [currentTimer, setCurrentTimer] = useState<string>("00:00:00");
@@ -19,7 +19,7 @@ export default function Pomodoro() {
           if (prev <= 0) {
             clearInterval(intervalRef.current!);
             setIsTimerRunning(false);
-            bell.play()
+            bell.play();
             return 0;
           }
 
