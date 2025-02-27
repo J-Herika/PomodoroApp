@@ -30,7 +30,7 @@ export default function Quote() {
 
     async function getQuote() {
       const response = await fetch(
-        "http://api.quotable.io/quotes/random?maxLength=150",
+        "http://api.quotable.io/quotes/random?maxLength=150&tags=success|time",
       );
       if (!response.ok) throw new Error("Failed to fetch quote1");
       const data: QuoteIF[] = await response.json();
@@ -42,7 +42,7 @@ export default function Quote() {
     }
   }, []);
   return (
-    <div className="h-34 w-11/12 md:w-4/10">
+    <div className="flex h-34 w-11/12 flex-col items-center justify-end md:w-4/10">
       <p className="text-center text-2xl">{quote}</p>
     </div>
   );

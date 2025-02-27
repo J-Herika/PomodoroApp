@@ -1,5 +1,5 @@
-import { GoHome } from "react-icons/go";
-import { MdLightbulbOutline } from "react-icons/md";
+import { GoHomeFill } from "react-icons/go";
+import { FaLightbulb } from "react-icons/fa";
 import { SlSizeFullscreen } from "react-icons/sl";
 
 import { State } from "../App";
@@ -13,20 +13,22 @@ export default function FooterBtns({ state, setState }: StateTP) {
   return (
     <div className="flex w-full justify-between">
       <div
-        className={`flex gap-4 rounded-xl border-3 border-neutral-950 px-1 py-2`}
+        className={`flex gap-4 rounded-xl border-3 border-neutral-950 px-1 py-2 transition-all duration-300 hover:bg-neutral-950 hover:text-neutral-50`}
       >
-        <GoHome
+        <GoHomeFill
           onClick={setState}
           size={35}
-          color={state == State.Clock ? "purple" : "black"}
+          color={state == State.Clock ? "#FF1053" : ""}
         />{" "}
-        <MdLightbulbOutline
+        <FaLightbulb
           onClick={setState}
           size={35}
-          color={state == State.Pomodoro ? "purple" : "black"}
+          color={state == State.Pomodoro ? "#FF1053" : ""}
         />
       </div>
-      <div className={`rounded-xl border-3 border-neutral-950 p-2`}>
+      <div
+        className={`transition-full rounded-xl border-3 border-neutral-950 p-2 duration-300 hover:bg-neutral-950 hover:text-neutral-50`}
+      >
         <SlSizeFullscreen onClick={toggleFullScreen} size={35} />
       </div>
     </div>

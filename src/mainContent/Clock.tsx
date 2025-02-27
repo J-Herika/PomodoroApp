@@ -11,7 +11,7 @@ export default function Clock() {
   });
 
   return (
-    <p className="font-spaceGrotesk text-6xl font-bold text-red-500 sm:text-8xl sm:text-green-500 md:text-9xl md:text-purple-500">
+    <p className="font-spaceGrotesk w-[42.98rem] text-6xl font-bold text-neutral-950 sm:text-8xl md:text-9xl">
       {String(
         clock.getHours() > 12 ? clock.getHours() - 12 : clock.getHours(),
       ).padStart(2, "0")}{" "}
@@ -20,3 +20,4 @@ export default function Clock() {
     </p>
   );
 }
+  

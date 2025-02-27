@@ -8,5 +8,4 @@ createRoot(document.getElementById("root")!).render(
     <App />
   </StrictMode>,
 );
-document.getElementById("root")!.style =
-  "display:flex; justify-content: center;";
+
